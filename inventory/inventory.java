@@ -7,6 +7,7 @@ public class inventory extends invMethods{
         int run=999;
         while(run==999){
             displayStart();
+            inventoryInitiate();
             String input=sc.nextLine();
             switch(input){
                 case "1":
@@ -14,10 +15,13 @@ public class inventory extends invMethods{
                     Thread.sleep(500);
                     purchaseLoop:
                     while(run==999){
+                        Thread.sleep(1000);
                         purchaseStart();
                         input=sc.nextLine();
                         switch(input){
                             case "1":
+                                inventoryPrint();
+                                Thread.sleep(500);
                                 break;
                             case "2":
                                 break;
