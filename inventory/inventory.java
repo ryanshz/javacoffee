@@ -2,30 +2,50 @@ package inventory;
 import java.util.Scanner;
 
 public class inventory extends invMethods{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner sc=new Scanner(System.in);
         int run=999;
         while(run==999){
             displayStart();
-            int input=sc.nextInt();
+            String input=sc.nextLine();
             switch(input){
-                case 1:
-                    System.out.println("1");
+                case "1":
+                    System.out.println("\nNow running 'PURCHASE'\n");
+                    Thread.sleep(500);
+                    purchaseLoop:
+                    while(run==999){
+                        purchaseStart();
+                        input=sc.nextLine();
+                        switch(input){
+                            case "1":
+                                break;
+                            case "2":
+                                break;
+                            case "3":
+                                break;
+                            case "0":
+                                System.out.println("\nNow returning to main menu.\n");
+                                Thread.sleep(500);
+                                break purchaseLoop;
+                            default:
+                                System.out.println("\nERROR: Input an integer and try again.\n");
+                        }
+                    }
                     break;
-                case 2:
-                    System.out.println("2");
+                case "2":
+                    System.out.println("Now running 'Sell'");
                     break;
-                case 3:
-                    System.out.println("3");
+                case "3":
+                    System.out.println("Now running 'Other'");
                     break;
-                case 4:
-                    System.out.println("4");
+                case "4":
+                    System.out.println("Now running 'Help'");
                     break;
-                case 0:
-                    System.exit(0);
+                case "0":
+                    System.out.println("Thank you! Have a nice day!");
+                    return;
                 default:
-                    System.out.println("Please input an integer value.");
-                    input=sc.nextInt();
+                    System.out.println("\nERROR: Input an integer and try again.\n");
             }
         }
         sc.close();
