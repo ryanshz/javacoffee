@@ -38,6 +38,14 @@ public class invMethods{
         System.out.println("-------------------------------------");
     }
 
+    public static void helpStart(){
+        System.out.println("-----------WELCOME TO HELP-----------\n");
+        System.out.println("Input number for function you would like to access: ");
+        System.out.println("    1. Print HashMap");
+        System.out.println("    0. Back\n");
+        System.out.println("-------------------------------------");
+    }
+
     public static void inventoryInitiate(){
         storage.put(1,"The Great Gatsby");
         storage.put(2,"The Silmarillion");
@@ -47,11 +55,22 @@ public class invMethods{
         storage.put(6,"A Wrinkle in Time");
     }
 
+    public static void sellItem(String itemIn){
+        storage.put(storage.size()+1,itemIn);
+    }
+
     public static void inventoryPrint(){
         System.out.println("Objects contained in inventory:\n");
         for(String x:storage.values()){
             System.out.println(x);
         }
         System.out.println();
+    }
+
+    public static void printHashMap(){
+        System.out.println("Inventory Hashmap:\n");
+        for(Integer x:storage.keySet()){
+            System.out.println("Key: "+x+" Item: "+storage.get(x));
+        }
     }
 }

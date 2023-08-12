@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class inventory extends invMethods{
     public static void main(String[] args) throws InterruptedException {
         Scanner sc=new Scanner(System.in);
+        Scanner sellInput=new Scanner(System.in);
         int run=999;
         while(run==999){
             displayStart();
@@ -54,6 +55,10 @@ public class inventory extends invMethods{
                                 Thread.sleep(500);
                                 break;
                             case "2":
+                                System.out.println("Input item you wish to sell: ");
+                                String itemIn=sellInput.nextLine();
+                                sellItem(itemIn);
+                                Thread.sleep(500);
                                 break;
                             case "3":
                                 break;
@@ -71,6 +76,25 @@ public class inventory extends invMethods{
                     break;
                 case "4":
                     System.out.println("Now running 'Help'");
+                    Thread.sleep(500);
+                    helpLoop:
+                    while(run==999){
+                        Thread.sleep(1000);
+                        helpStart();
+                        input=sc.nextLine();
+                        switch(input){
+                            case "1":
+                                printHashMap();
+                                Thread.sleep(1000);
+                                break;
+                            case "0":
+                                System.out.println("\nNow returning to main menu.\n");
+                                Thread.sleep(500);
+                                break helpLoop;
+                            default:
+                                System.out.println("\nERROR: Input a valid integer and try again.\n");
+                        }
+                    }
                     break;
                 case "0":
                     System.out.println("Thank you! Have a nice day!");
@@ -80,5 +104,6 @@ public class inventory extends invMethods{
             }
         }
         sc.close();
+        sellInput.close();
     }
 }
