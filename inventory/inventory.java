@@ -27,17 +27,44 @@ public class inventory extends invMethods{
                                 break;
                             case "3":
                                 break;
+                            case "4":
+                                break;
+                            case "5":
+                                break;
                             case "0":
                                 System.out.println("\nNow returning to main menu.\n");
                                 Thread.sleep(500);
                                 break purchaseLoop;
                             default:
-                                System.out.println("\nERROR: Input an integer and try again.\n");
+                                System.out.println("\nERROR: Input a valid integer and try again.\n");
                         }
                     }
                     break;
                 case "2":
                     System.out.println("Now running 'Sell'");
+                    Thread.sleep(500);
+                    sellLoop:
+                    while(run==999){
+                        Thread.sleep(1000);
+                        sellStart();
+                        input=sc.nextLine();
+                        switch(input){
+                            case "1":
+                                inventoryPrint();
+                                Thread.sleep(500);
+                                break;
+                            case "2":
+                                break;
+                            case "3":
+                                break;
+                            case "0":
+                                System.out.println("\nNow returning to main menu.\n");
+                                Thread.sleep(500);
+                                break sellLoop;
+                            default:
+                                System.out.println("\nERROR: Input a valid integer and try again.\n");
+                        }
+                    }
                     break;
                 case "3":
                     System.out.println("Now running 'Other'");
@@ -49,7 +76,7 @@ public class inventory extends invMethods{
                     System.out.println("Thank you! Have a nice day!");
                     return;
                 default:
-                    System.out.println("\nERROR: Input an integer and try again.\n");
+                    System.out.println("\nERROR: Input a valid integer and try again.\n");
             }
         }
         sc.close();

@@ -20,16 +20,31 @@ public class invMethods{
         System.out.println("-----------WELCOME TO PURCHASE-----------\n");
         System.out.println("Input number for function you would like to access: ");
         System.out.println("    1. View Inventory");
-        System.out.println("    2. Checkout");
-        System.out.println("    3. Help");
+        System.out.println("    2. Add to Cart");
+        System.out.println("    3. Remove from Cart");
+        System.out.println("    4. Checkout");
+        System.out.println("    5. Help");
         System.out.println("    0. Back\n");
         System.out.println("-----------------------------------------");
+    }
+
+    public static void sellStart(){
+        System.out.println("-----------WELCOME TO SELL-----------\n");
+        System.out.println("Input number for function you would like to access: ");
+        System.out.println("    1. View Inventory");
+        System.out.println("    2. Sell Items");
+        System.out.println("    3. Help");
+        System.out.println("    0. Back\n");
+        System.out.println("-------------------------------------");
     }
 
     public static void inventoryInitiate(){
         storage.put(1,"The Great Gatsby");
         storage.put(2,"The Silmarillion");
         storage.put(3,"Farenheit 451");
+        storage.put(4,"Fellowship of the Ring");
+        storage.put(5,"Brave New World");
+        storage.put(6,"A Wrinkle in Time");
     }
 
     public static void inventoryPrint(){
