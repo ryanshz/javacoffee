@@ -1,10 +1,15 @@
 package inventory;
-
 import java.util.HashMap;
 
 public class invMethods{
+    /**
+     * storage hashmap holds all items in inventory
+     */
     static HashMap<Integer,String> storage=new HashMap<Integer,String>();
 
+    /**
+     * prints start screen for program
+     */
     public static void displayStart(){
         System.out.println("-----------WELCOME TO INVENTORY MANAGEMENT-----------\n");
         System.out.println("Input number for function you would like to access: ");
@@ -16,6 +21,9 @@ public class invMethods{
         System.out.println("-----------------------------------------------------");
     }
 
+    /**
+     * prints screen for purchase menu
+     */
     public static void purchaseStart(){
         System.out.println("-----------WELCOME TO PURCHASE-----------\n");
         System.out.println("Input number for function you would like to access: ");
@@ -28,6 +36,9 @@ public class invMethods{
         System.out.println("-----------------------------------------");
     }
 
+    /**
+     * prints screen for sell menu
+     */
     public static void sellStart(){
         System.out.println("-----------WELCOME TO SELL-----------\n");
         System.out.println("Input number for function you would like to access: ");
@@ -38,7 +49,10 @@ public class invMethods{
         System.out.println("-------------------------------------");
     }
 
-    public static void helpStart(){
+    /**
+     * prints screen for help menu
+     */
+    public static void helpStart(){ 
         System.out.println("-----------WELCOME TO HELP-----------\n");
         System.out.println("Input number for function you would like to access: ");
         System.out.println("    1. Print HashMap");
@@ -46,6 +60,9 @@ public class invMethods{
         System.out.println("-------------------------------------");
     }
 
+    /**
+     * initiates inventory in both buy and sell menu
+     */
     public static void inventoryInitiate(){
         storage.put(1,"The Great Gatsby");
         storage.put(2,"The Silmarillion");
@@ -55,10 +72,17 @@ public class invMethods{
         storage.put(6,"A Wrinkle in Time");
     }
 
+    /**
+     * sells item and adds it to hashmap as next key item and next string in
+     * @param itemIn String value to be added as an item to storage inventory
+     */
     public static void sellItem(String itemIn){
         storage.put(storage.size()+1,itemIn);
     }
 
+    /**
+     * prints String values in hashmap
+     */
     public static void inventoryPrint(){
         System.out.println("Objects contained in inventory:\n");
         for(String x:storage.values()){
@@ -67,6 +91,9 @@ public class invMethods{
         System.out.println();
     }
 
+    /**
+     * prints whole hashmap
+     */
     public static void printHashMap(){
         System.out.println("Inventory Hashmap:\n");
         for(Integer x:storage.keySet()){
