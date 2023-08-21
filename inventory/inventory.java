@@ -8,6 +8,7 @@ public class inventory extends invMethods{
     public static void main(String[] args) throws InterruptedException {
         Scanner sc=new Scanner(System.in); //switch statement scanner
         Scanner sellInput=new Scanner(System.in); //scanner for sell input
+        Scanner buyInput=new Scanner(System.in); //scanner for buy input
         int run=999;
         while(run==999){ //main loop to run program
             displayStart();
@@ -28,6 +29,12 @@ public class inventory extends invMethods{
                                 Thread.sleep(500);
                                 break;
                             case "2":
+                                inventoryPrint();
+                                System.out.println("Input item from inventory that you wish to add to cart: ");
+                                String itemIn=buyInput.nextLine();
+                                addToCart(itemIn);
+                                System.out.println("Returning to BUY menu.");
+                                Thread.sleep(500);
                                 break;
                             case "3":
                                 break;
@@ -108,5 +115,6 @@ public class inventory extends invMethods{
         }
         sc.close();
         sellInput.close();
+        buyInput.close();
     }
 }

@@ -6,7 +6,7 @@ public class invMethods{
      * storage hashmap holds all items in inventory
      */
     static HashMap<Integer,String> storage=new HashMap<Integer,String>();
-
+    static HashMap<Integer,String> cart=new HashMap<Integer,String>();
     /**
      * prints start screen for program
      */
@@ -99,5 +99,12 @@ public class invMethods{
         for(Integer x:storage.keySet()){
             System.out.println("Key: "+x+" Item: "+storage.get(x));
         }
+    }
+    /**
+     * adds object listed to new 'cart' hashmap
+     */
+    public static void addToCart(String itemIn){
+        cart.put(cart.size()+1,itemIn);
+        System.out.println(cart.get(1)+" ("+cart.size()+") was added.\n");
     }
 }
