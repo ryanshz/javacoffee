@@ -107,4 +107,27 @@ public class invMethods{
         cart.put(cart.size()+1,itemIn);
         System.out.println(cart.get(1)+" ("+cart.size()+") was added.\n");
     }
+
+    /**
+     * prints cart
+     */
+    public static void printCart(){
+        System.out.println("Items in Cart:\n");
+        for(String x: cart.values()){
+            System.out.println(x);
+        }
+        System.out.println();
+    }
+
+    /**
+     * removes item from cart
+     */
+    public static void removeFromCart(String itemIn){
+        if(cart.containsValue(itemIn)){
+            cart.values().remove(itemIn);
+            System.out.println("Item removed.");
+        }else{
+            System.out.println("Item is not in cart.");
+        }
+    }
 }

@@ -28,7 +28,7 @@ public class inventory extends invMethods{
                                 inventoryPrint();
                                 Thread.sleep(500);
                                 break;
-                            case "2":
+                            case "2": //prints inventory, adds item to cart
                                 inventoryPrint();
                                 System.out.println("Input item from inventory that you wish to add to cart: ");
                                 String itemIn=buyInput.nextLine();
@@ -36,7 +36,12 @@ public class inventory extends invMethods{
                                 System.out.println("Returning to BUY menu.");
                                 Thread.sleep(500);
                                 break;
-                            case "3":
+                            case "3": //prints cart, removes item from cart
+                                printCart();
+                                System.out.println("Input item from inventory you wish to remove from cart: ");
+                                itemIn=buyInput.nextLine();
+                                removeFromCart(itemIn);
+                                System.out.println("Returning to BUY menu.");
                                 break;
                             case "4":
                                 break;
