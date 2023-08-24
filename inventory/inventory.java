@@ -60,8 +60,6 @@ public class inventory extends invMethods{
                                         System.out.println("ERROR: Invalid input, returning to BUY menu.");
                                 }
                                 break;
-                            case "5":
-                                break;
                             case "0": //returns to main menu
                                 System.out.println("\nNow returning to main menu.\n");
                                 Thread.sleep(500);
@@ -90,8 +88,6 @@ public class inventory extends invMethods{
                                 sellItem(itemIn);
                                 Thread.sleep(500);
                                 break;
-                            case "3":
-                                break;
                             case "0": //returns to main menu
                                 System.out.println("\nNow returning to main menu.\n");
                                 Thread.sleep(500);
@@ -114,7 +110,7 @@ public class inventory extends invMethods{
                         input=sc.nextLine();
                         switch(input){
                             case "1": //prints hash map of inventory items
-                                printHashMap();
+                                printStorageHashMap();
                                 Thread.sleep(1000);
                                 break;
                             case "0": //returns to main menu

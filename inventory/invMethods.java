@@ -31,7 +31,6 @@ public class invMethods{
         System.out.println("    2. Add to Cart");
         System.out.println("    3. Remove from Cart");
         System.out.println("    4. Checkout");
-        System.out.println("    5. Help");
         System.out.println("    0. Back\n");
         System.out.println("-----------------------------------------");
     }
@@ -44,7 +43,6 @@ public class invMethods{
         System.out.println("Input number for function you would like to access: ");
         System.out.println("    1. View Inventory");
         System.out.println("    2. Sell Items");
-        System.out.println("    3. Help");
         System.out.println("    0. Back\n");
         System.out.println("-------------------------------------");
     }
@@ -94,7 +92,7 @@ public class invMethods{
     /**
      * prints whole hashmap
      */
-    public static void printHashMap(){
+    public static void printStorageHashMap(){
         System.out.println("Inventory Hashmap:\n");
         for(Integer x:storage.keySet()){
             System.out.println("Key: "+x+" Item: "+storage.get(x));
