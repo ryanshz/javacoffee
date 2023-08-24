@@ -133,6 +133,23 @@ public class invMethods{
      * checks out cart, removing it from inventory
      */
     public static void checkoutCart(){ //DO THIS
-
+        System.out.println("Inventory:");
+        for(Integer x:storage.keySet()){
+            System.out.println("Key: "+x+" Item: "+storage.get(x));
+        }
+        System.out.println();
+        System.out.println("Cart:");
+        for(Integer x:cart.keySet()){
+            System.out.println("Key: "+x+" Item: "+cart.get(x));
+        }
+        System.out.println("Removing overlap...");
+        for(int i=0;i<storage.size();i++){
+            String invItem=storage.get(i);
+            if(cart.containsValue(invItem)){
+                storage.remove(i);
+                System.out.println(invItem+" removed from inventory.");
+            }
+        }
+        System.out.println("Checkout complete.\n");
     }
 }
