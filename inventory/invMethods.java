@@ -132,7 +132,7 @@ public class invMethods{
     /**
      * checks out cart, removing it from inventory
      */
-    public static void checkoutCart(){
-        
+    public static void checkoutCart(){ //DO THIS
+
     }
 }

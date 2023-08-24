@@ -48,6 +48,7 @@ public class inventory extends invMethods{
                                 System.out.println("Are these the items you'd like to check out? (Y/N)");
                                 itemIn=buyInput.nextLine();
                                 System.out.println(itemIn);
+                                //THING TO FIX HERE
                                 if(itemIn=="N"){
                                     System.out.println("Returning to buy menu.");
                                     break;
@@ -59,6 +60,7 @@ public class inventory extends invMethods{
                                     System.out.println("ERROR: Please enter a valid character, (Y/N)");
                                     itemIn=buyInput.nextLine();
                                 }
+                                //THING TO FIX ENDS HERE
                                 break;
                             case "5":
                                 break;
