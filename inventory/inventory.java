@@ -43,7 +43,22 @@ public class inventory extends invMethods{
                                 removeFromCart(itemIn);
                                 System.out.println("Returning to BUY menu.");
                                 break;
-                            case "4":
+                            case "4": //checks out cart and removes from inventory
+                                printCart();
+                                System.out.println("Are these the items you'd like to check out? (Y/N)");
+                                itemIn=buyInput.nextLine();
+                                System.out.println(itemIn);
+                                if(itemIn=="N"){
+                                    System.out.println("Returning to buy menu.");
+                                    break;
+                                }else if(itemIn=="Y"){
+                                    checkoutCart();
+                                    System.out.println("Thank you! Have a nice day!");
+                                    break;
+                                }else{
+                                    System.out.println("ERROR: Please enter a valid character, (Y/N)");
+                                    itemIn=buyInput.nextLine();
+                                }
                                 break;
                             case "5":
                                 break;

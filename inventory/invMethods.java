@@ -107,7 +107,6 @@ public class invMethods{
         cart.put(cart.size()+1,itemIn);
         System.out.println(cart.get(1)+" ("+cart.size()+") was added.\n");
     }
-
     /**
      * prints cart
      */
@@ -118,7 +117,6 @@ public class invMethods{
         }
         System.out.println();
     }
-
     /**
      * removes item from cart
      */
@@ -129,5 +127,12 @@ public class invMethods{
         }else{
             System.out.println("Item is not in cart.");
         }
+    }
+
+    /**
+     * checks out cart, removing it from inventory
+     */
+    public static void checkoutCart(){
+        
     }
 }
