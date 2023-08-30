@@ -113,6 +113,10 @@ public class inventory extends invMethods{
                                 printStorageHashMap();
                                 Thread.sleep(1000);
                                 break;
+                            case "2": //inventory counter
+                                break;
+                            case "3": //purchase log?
+                                break;
                             case "0": //returns to main menu
                                 System.out.println("\nNow returning to main menu.\n");
                                 Thread.sleep(500);
