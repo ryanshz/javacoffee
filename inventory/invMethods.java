@@ -1,4 +1,7 @@
 package inventory;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class invMethods{
@@ -54,6 +57,8 @@ public class invMethods{
         System.out.println("-----------WELCOME TO HELP-----------\n");
         System.out.println("Input number for function you would like to access: ");
         System.out.println("    1. Print HashMap");
+        System.out.println("    2. Print Inventory Report");
+        System.out.println("    3. Print Purchase Log");
         System.out.println("    0. Back\n");
         System.out.println("-------------------------------------");
     }
@@ -91,6 +96,7 @@ public class invMethods{
 
     /**
      * prints whole hashmap
+     * @return 
      */
     public static void printStorageHashMap(){
         System.out.println("Inventory Hashmap:\n");
@@ -130,7 +136,7 @@ public class invMethods{
     /**
      * checks out cart, removing it from inventory
      */
-    public static void checkoutCart(){ //DO THIS
+    public static void checkoutCart(){
         System.out.println("Inventory:");
         for(Integer x:storage.keySet()){
             System.out.println("Key: "+x+" Item: "+storage.get(x));
@@ -149,5 +155,34 @@ public class invMethods{
             }
         }
         System.out.println("Checkout complete.\n");
+    }
+
+    /**
+     * prints out inventory catalog
+     */
+    public static void inventoryFile(){
+        try{
+            File invFile=new File("inventoryreport.txt");
+            if(invFile.createNewFile()){
+                System.out.println("Inventory report created: "+invFile.getName());
+            }else{
+                System.out.println("Inventory report exists.");
+            }
+        }catch(IOException e){
+            System.out.println("ERROR occurred.");
+        }
+    }
+    public static void writeToInvFile(){
+        try{
+            FileWriter invFileWrite=new FileWriter("inventoryreport.txt");
+            invFileWrite.write("Current Inventory: \n");
+            for(Integer x:storage.keySet()){
+                invFileWrite.write("Key: "+x+" Item: "+storage.get(x)+"\n");
+            }
+            invFileWrite.close();
+            System.out.println("Inventory report printed.");
+        }catch(IOException e){
+            System.out.println("ERROR occurred.");
+        }
     }
 }

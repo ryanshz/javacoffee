@@ -114,6 +114,9 @@ public class inventory extends invMethods{
                                 Thread.sleep(1000);
                                 break;
                             case "2": //inventory counter
+                                System.out.println("Creating inventory report: ");
+                                inventoryFile();
+                                writeToInvFile();
                                 break;
                             case "3": //purchase log?
                                 break;
