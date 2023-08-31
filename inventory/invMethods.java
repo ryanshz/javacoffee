@@ -10,6 +10,7 @@ public class invMethods{
      */
     static HashMap<Integer,String> storage=new HashMap<Integer,String>();
     static HashMap<Integer,String> cart=new HashMap<Integer,String>();
+    static HashMap<Integer,String> purchaseLog=new HashMap<Integer,String>();
     /**
      * prints start screen for program
      */
@@ -58,7 +59,6 @@ public class invMethods{
         System.out.println("Input number for function you would like to access: ");
         System.out.println("    1. Print HashMap");
         System.out.println("    2. Print Inventory Report");
-        System.out.println("    3. Print Purchase Log");
         System.out.println("    0. Back\n");
         System.out.println("-------------------------------------");
     }
@@ -158,7 +158,7 @@ public class invMethods{
     }
 
     /**
-     * prints out inventory catalog
+     * creates inventory log
      */
     public static void inventoryFile(){
         try{
@@ -191,13 +191,46 @@ public class invMethods{
     }
 
     /**
-     * adds items to purchase log
+     * creates purchase log
      */
-    public static void writeToPurchase(int purchaseID){
-        if(purchaseID==1){
+    public static void purchaseFile(){
+        try{
+            File purchaseFile=new File("purchasereport.txt");
+            if(purchaseFile.createNewFile()){
+                System.out.println("Purchase report created: "+purchaseFile.getName()+"\n");
+            }else{
+                System.out.println("Purchase report exists."+"\n");
+            }
+        }catch(IOException e){
+            System.out.println("ERROR occurred.");
+        }
+    }
 
+    public static void addPurchase(int purchaseID){
+        if(purchaseID==1){
+            for(Integer x:cart.keySet()){
+                purchaseLog.put(x,cart.get(x));
+            }
         }else{
-            
+            purchaseLog.put(purchaseLog.size()+1,storage.get(storage.size()));
+        }
+    }
+
+    /**
+     * adds items to purchase log
+     * @param purchaseID acts as identifier to see if purchase logged is a buy or sell
+     */
+    public static void writeToPurchase(){
+        try{
+            FileWriter purchaseFileWrite=new FileWriter("purchasereport.txt");
+            purchaseFileWrite.write("Item(s) purchased:\n");
+            for(Integer x:purchaseLog.keySet()){ //buy
+                purchaseFileWrite.write("Key: "+x+" Item: "+purchaseLog.get(x)+"\n");
+            }
+            purchaseFileWrite.close();
+            System.out.println("Added to report.");
+        }catch(IOException e){
+            System.out.println("ERROR occurred.");
         }
     }
 }

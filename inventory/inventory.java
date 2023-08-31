@@ -11,6 +11,7 @@ public class inventory extends invMethods{
         Scanner buyInput=new Scanner(System.in); //scanner for buy input
         int run=999;
         while(run==999){ //main loop to run program
+            purchaseFile();
             displayStart();
             inventoryInitiate();
             String input=sc.nextLine();
@@ -49,6 +50,7 @@ public class inventory extends invMethods{
                                         System.out.println("Returning to BUY menu.");
                                         break;
                                     case "Y":
+                                        addPurchase(1);
                                         checkoutCart();
                                         System.out.println("Thank you, have a nice day!");
                                         break;
@@ -105,8 +107,9 @@ public class inventory extends invMethods{
                                 inventoryFile();
                                 writeToInvFile();
                                 break;
-                            case "3": //purchase log?
+                            case "3": //purchase log
                                 System.out.println("Creating purchase report: ");
+                                writeToPurchase();
                                 break;
                             case "0": //returns to main menu
                                 System.out.println("\nNow returning to main menu.\n");
