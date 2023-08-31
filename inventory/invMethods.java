@@ -172,6 +172,10 @@ public class invMethods{
             System.out.println("ERROR occurred.");
         }
     }
+
+    /**
+     * writes inventory to inventory catalog
+     */
     public static void writeToInvFile(){
         try{
             FileWriter invFileWrite=new FileWriter("inventoryreport.txt");
@@ -183,6 +187,17 @@ public class invMethods{
             System.out.println("Inventory report printed.");
         }catch(IOException e){
             System.out.println("ERROR occurred.");
+        }
+    }
+
+    /**
+     * adds items to purchase log
+     */
+    public static void writeToPurchase(int purchaseID){
+        if(purchaseID==1){
+
+        }else{
+            
         }
     }
 }
