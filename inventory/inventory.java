@@ -2,9 +2,6 @@ package inventory;
 import java.util.Scanner;
 
 public class inventory extends invMethods{
-    /**
-     * @throws InterruptedException allows Thread.sleep to function properly
-     */
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in); //switch statement scanner
         Scanner sellInput=new Scanner(System.in); //scanner for sell input
@@ -90,10 +87,7 @@ public class inventory extends invMethods{
                         }
                     }
                     break;
-                case "3": //other
-                    System.out.println("Now running 'Other'");
-                    break;
-                case "4": //help menu, for debugging or commands that help user of system
+                case "3": //help menu, for debugging or commands that help user of system
                     System.out.println("Now running 'Help'");
                     helpLoop:
                     while(run==999){
