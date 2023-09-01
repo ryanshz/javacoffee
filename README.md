@@ -1,12 +1,12 @@
 # javacoffee
-derusting on some Java stuff over the summer
+I used this repository to derust on Java over the summer.
 
-my plans for this repository are to make an inventory system using various concepts learned throughout school,
-as well as adding other concepts learned on my own.
+## plans
+Make an inventory system using various concepts learned throughout school, as well as adding other concepts learned on my own.
+Once this is done, I'm planning on remaking this in Python with extra functionality, to practice a new language.
 
-ADDING THIS FOR FUTURE REFERENCE
- -once finished, redo in python (or the most appropriate language)
+## future concepts to be used
  -use prototyping process model to better determine requirements and functions
     - base this off current inventory systems in market
- -link to a database?
+ -link to a database
  -add more documentation

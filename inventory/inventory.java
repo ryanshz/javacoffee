@@ -80,6 +80,7 @@ public class inventory extends invMethods{
                                 System.out.println("Input item you wish to sell: ");
                                 String itemIn=sellInput.nextLine();
                                 sellItem(itemIn);
+                                addPurchase(2);
                                 break;
                             case "0": //returns to main menu
                                 System.out.println("\nNow returning to main menu.\n");

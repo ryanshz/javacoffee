@@ -10,7 +10,8 @@ public class invMethods{
      */
     static HashMap<Integer,String> storage=new HashMap<Integer,String>();
     static HashMap<Integer,String> cart=new HashMap<Integer,String>();
-    static HashMap<Integer,String> purchaseLog=new HashMap<Integer,String>();
+    static HashMap<Integer,String> purchaseLogBuy=new HashMap<Integer,String>();
+    static HashMap<Integer,String> purchaseLogSell=new HashMap<Integer,String>();
     /**
      * prints start screen for program
      */
@@ -59,6 +60,7 @@ public class invMethods{
         System.out.println("Input number for function you would like to access: ");
         System.out.println("    1. Print HashMap");
         System.out.println("    2. Print Inventory Report");
+        System.out.println("    3. Print Purchase Report");
         System.out.println("    0. Back\n");
         System.out.println("-------------------------------------");
     }
@@ -104,6 +106,7 @@ public class invMethods{
             System.out.println("Key: "+x+" Item: "+storage.get(x));
         }
     }
+
     /**
      * adds object listed to new 'cart' hashmap
      */
@@ -111,6 +114,7 @@ public class invMethods{
         cart.put(cart.size()+1,itemIn);
         System.out.println(cart.get(1)+" ("+cart.size()+") was added.\n");
     }
+
     /**
      * prints cart
      */
@@ -121,6 +125,7 @@ public class invMethods{
         }
         System.out.println();
     }
+
     /**
      * removes item from cart
      */
@@ -206,13 +211,17 @@ public class invMethods{
         }
     }
 
+    /**
+     * adds item to purchase array to use later for log
+     * @param purchaseID acts as identifier to see if purchase logged is a buy or sell
+     */
     public static void addPurchase(int purchaseID){
         if(purchaseID==1){
             for(Integer x:cart.keySet()){
-                purchaseLog.put(x,cart.get(x));
+                purchaseLogBuy.put(x,cart.get(x));
             }
         }else{
-            purchaseLog.put(purchaseLog.size()+1,storage.get(storage.size()));
+            purchaseLogSell.put(purchaseLogSell.size()+1,storage.get(storage.size()));
         }
     }
 
@@ -224,8 +233,12 @@ public class invMethods{
         try{
             FileWriter purchaseFileWrite=new FileWriter("purchasereport.txt");
             purchaseFileWrite.write("Item(s) purchased:\n");
-            for(Integer x:purchaseLog.keySet()){ //buy
-                purchaseFileWrite.write("Key: "+x+" Item: "+purchaseLog.get(x)+"\n");
+            for(Integer x:purchaseLogBuy.keySet()){ //buy
+                purchaseFileWrite.write("Key: "+x+" Item: "+purchaseLogBuy.get(x)+"\n");
+            }
+            purchaseFileWrite.write("Item(s) sold:\n");
+            for(Integer x:purchaseLogSell.keySet()){ //sell
+                purchaseFileWrite.write("Key: "+x+" Item: "+purchaseLogSell.get(x)+"\n");
             }
             purchaseFileWrite.close();
             System.out.println("Added to report.");
