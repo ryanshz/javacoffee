@@ -8,7 +8,7 @@ Make an inventory system using various concepts learned throughout university, a
 functionality. No longer developing pythoncoffee, shifting focus to this.
 
 ## future concepts to be used
-- use prototyping process model to better determine requirements and functions
+- use some form of SDLC model to better determine requirements and functions
    - base this off current inventory systems in market
 - link to a database
 - add more documentation
